@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+$bg_color: hsl(217, 54%, 11%);
+$card-bg: rgb(20, 37, 61);
+$line: rgb(47, 65, 91);
+$soft_cyan: #8bacda;
+$cyan: #00fff7;
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.8rem;
+  background: $bg_color;
+  margin: 4.3rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 1.6rem;
+  color: $soft_cyan;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/*===========
+
+GLOBAL STYLES
+
+============*/
+
+.container {
+  padding: 1.25rem;
+  background-color: $card-bg;
+  border-radius: 2rem;
+  margin-bottom: 0.5rem;
+
+  .main-image {
+    position: relative;
+
+    img {
+      border-radius: 1.5rem;
+    }
+
+    div {
+      position: absolute;
+      top: 0;
+      background-color: rgba(0, 255, 247, 0.6);
+      width: 100%;
+      height: calc(100% - 4px);
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 1.5rem;
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.title-description {
+  h2,
+  p {
+    padding: 1rem 0.5rem;
+    justify-self: flex-start;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+    color: white;
+    display: inline-block;
+    &:hover {
+      color: $cyan;
+      cursor: pointer;
+    }
+  }
+}
+
+.price-days {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .price,
+  .days {
+    display: flex;
+    padding: 2rem 5rem;
+    border-bottom: 1px solid $line;
+  }
+
+  .price {
+    color: $cyan;
+  }
+
+  .days {
+    color: $soft_cyan;
+  }
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid white;
+    border-radius: 50%;
+  }
+  p {
+    padding-left: 1.8rem;
+
+    span {
+      color: white;
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .container {
+    width: 450px;
+    margin: 0 auto 1rem;
+  }
+}
+
+/*
+
+
+- Mobile: 375px
+- Desktop: 1440px
+
+
+
+
+
+  width: 80%;
+  height: 50rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 40rem;
+  border-radius: 2rem;
+
+
+
+
+*/
